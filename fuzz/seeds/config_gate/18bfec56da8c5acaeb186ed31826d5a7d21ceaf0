@@ -1,0 +1,31 @@
+{"repos": [ "owner/ro",
+  {
+      "repo": "owner/pr-intoject",
+      "lookback_days": 31,
+   "exclude_authors": ["nont"]
+    },   {
+   "repo": "owner/prject",
+"exclude_authors": ["noisy-fount"]
+    }
+  ,
+    {"repo": "owner/prject",     "lookback_days": 63,
+      "exclude_authors": ["non4"]
+    },   {
+  "repo": "own/pryou-intoject",
+      "lookback_days": 63,
+   "exclude_authors": ["nont"]
+    },   {
+   "repo": "owner/prject",
+"exclude_authors": ["noisy-fount"]
+    }
+  ,
+    {
+ "repo": "owner/prject",
+      "lookback_days": 62,
+      "exclude_authors": ["nont"]
+    },   {
+   "repo": "own/prject",
+"exclude_authors": ["noisy-fount"]
+    } ,
+    {
+epo/prF",  

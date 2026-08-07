@@ -1,0 +1,32 @@
+{"repos": [ "owner/ro",
+     {
+    "repo": "owner/pinect",
+      "lookback_days": 6,
+   "exclude_authors": ["n"]
+    },   {
+   "repo": "owner/prject",
+"exclude_authors": ["noisy-fount"]
+    }
+  ,
+    {
+ "repo": "ownek/prct",
+      "lookback_days": 39,
+     "exclude_authors": ["nont"]
+    },   {
+   "repo": "owner/prject",
+"exclude_authors": ["noisy-fount"]
+    }
+  
+  
+, 
+
+
+
+
+
+
+
+
+
+{
+ "

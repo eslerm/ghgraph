@@ -1,0 +1,15 @@
+{
+  "viewer": "on",
+  "repos": [ {"repo": "owner/pn",
+      "scope": "project",
+      "lookback_days": 29,
+      "exclude_authors": ["noisy-forge-aoun-"]
+  }],  "people": [
+  ],
+  "teams": [
+ ],
+  "lookback_days": 90,
+  "reverify_open_days": 7,
+  
+  "workers": 3,"rate_limit_floor": 50
+}

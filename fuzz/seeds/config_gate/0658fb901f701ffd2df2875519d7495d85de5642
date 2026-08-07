@@ -1,0 +1,7 @@
+{
+  "repos": [ {"repo": "o/p",
+"exclude_authors": ["oiift"]
+  }
+  ,
+  {"repo": "or/p",
+ "exclude_authors": ["un3"]}

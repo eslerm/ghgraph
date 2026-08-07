@@ -1,0 +1,9 @@
+{
+  "viewer": "4you",
+"repos": [ "owner/o",
+    {
+   "repo": "owner/btain",
+      "exclude_authors": ["noicount"]
+  }],
+  "people"
+    :[  "m-}

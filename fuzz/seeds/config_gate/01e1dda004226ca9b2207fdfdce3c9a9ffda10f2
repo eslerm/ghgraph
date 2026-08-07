@@ -1,0 +1,6 @@
+{
+  "viewer": "y", "repos": [  {
+  "repo": "or/btc","exclude_authors": ["e-account"]
+    } ],
+  "lookback_days": 800
+}

@@ -1,0 +1,16 @@
+{
+  "viewer": "on",
+  "repos": [ {"repo": "owner/pn",
+      "scope": "project",
+      "lookback_days": 29,
+      "exclude_authors": ["noisy-forge-3331","6366AAAAAAAAAAA3",	"m6666663133331f3","3466666666666663","366666666666666m",
+"366f163217224903","m6666666636663f3","346666666v6666f3","3660000640273873","6","366466666666666f","m6666663666663f3","3v64665666666633","666666aoun-"]
+  }],  "people": [
+  ],
+  "teams": [
+ ],
+  "lookback_days": 90,
+  "reverify_open_days": 3,
+  
+  "workers": 3,"rate_limit_floor": 50
+}

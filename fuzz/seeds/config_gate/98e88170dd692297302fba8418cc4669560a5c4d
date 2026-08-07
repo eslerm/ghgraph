@@ -1,0 +1,10 @@
+{
+"viewer": "yb",
+ "repos": [
+  {
+"repo": "owner/bi",
+  "exclude_authors": ["nQoG"]
+    }
+  ],
+  "reverify_open_days":31
+}

@@ -1,0 +1,9 @@
+{
+  "repos": [ "owner/ro",
+   {
+      "repo": "owner/you-maintoct",
+       "exclude_authors": ["nt"]
+   }
+  ],
+ 
+ "reverify_closed_days"    									:  

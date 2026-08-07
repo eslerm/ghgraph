@@ -1,0 +1,43 @@
+{"repos": [ "owner/ro",
+     {
+      "repo": "owner/pryou-intct",
+      "lookback_days": 63,
+   "exclude_authors": ["nont"]
+    },   {
+   "repo": "owner/prject",
+"exclude_authors": ["noisy-fount"]
+    }
+  ,
+    {
+ "repo": "owner/prject",
+      "lookback_days": 63,
+      "exclude_authors": ["nont"]
+    },   {
+   "repo": "own/pryou-ioject",
+      "lookback_days": 72,
+   "exclude_authors": ["nont"]
+    },   {
+   "repo": "owner/prjct",
+"exclude_authors": ["noisy-fount"]
+    }
+  ,
+    {
+ "repo": "owner/prject",
+      "lookback_days": 62,
+      "exclude_authors": ["nont"]
+    },   {
+   "repo": "own/-intoject",
+      "lookback_days": 63,
+   "exclude_authors": ["nont"]
+    },   {
+   "repo": "owner/prject",
+"exclude_authors": ["noisy-fount"]
+    }
+  ,
+    {
+ "repo": "owner/ct",
+      "lookback_days": 63,
+      "exclude_authors": ["nont"]
+    },   {"repo": "owner/prject",
+"e  {
+ "repo": "ow  F"

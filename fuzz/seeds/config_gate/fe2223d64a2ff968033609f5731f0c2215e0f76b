@@ -1,0 +1,6 @@
+{ "viewer":"yourlogin",
+  "repos": [   {
+"repo": "oer/bct",
+      "lookback_days": 46,
+      "exclude_authors": [ ],
+  "tm

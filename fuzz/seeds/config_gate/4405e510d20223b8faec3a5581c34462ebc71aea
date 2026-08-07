@@ -1,0 +1,13 @@
+{"repos": [ 
+     { "repo": "owner/pryou-inoject",
+      "lookback_days": 63,
+   "exclude_authors": ["nont"]
+    },   {
+   "repo": "owner/prject",
+"exclude_authors": ["nois"]    }
+  ,
+    {
+ "repo": "r/prject",
+      "lookback_days": 63,
+      "exclude_authors": ["nont"]
+yclosed_d

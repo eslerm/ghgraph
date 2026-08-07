@@ -1,0 +1,4 @@
+{  "viewer":"y",  "repos":[
+  { "repo": "owner/biain",
+"exclude_authors":["no"]}
+]}
