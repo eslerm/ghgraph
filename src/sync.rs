@@ -404,8 +404,9 @@ pub struct PrBundle {
     /// earns this the same way a full walk does: ids suffice, bodies are
     /// not part of completeness.
     threads_complete: bool,
-    /// The three schema-nullable connections: present (not error-masked)
-    /// and complete (nodes == totalCount).
+    /// The three Option-masked connections (requests and closing are
+    /// schema-nullable; reviews is modeled Option defensively — parse.rs):
+    /// present (not error-masked) and complete (nodes == totalCount).
     requests_complete: bool,
     reviews_complete: bool,
     closing_complete: bool,
@@ -4107,6 +4108,9 @@ fn upsert_thread(
 fn ingestable_reviews(nodes: &[parse::ReviewNode]) -> Vec<&parse::ReviewNode> {
     fn rank(r: &parse::ReviewNode) -> (&str, &str) {
         (
+            // Every review reaching rank passed the submitted_at.is_none()
+            // filter below, so the None arm is unreachable; "" would sort a
+            // stray null earliest, the harmless direction if that ever broke.
             r.submitted_at.as_ref().map_or("", |t| t.as_str()),
             r.id.as_str(),
         )
@@ -4129,6 +4133,11 @@ fn ingestable_reviews(nodes: &[parse::ReviewNode]) -> Vec<&parse::ReviewNode> {
                         }
                     }
                 }
+                // A deleted account has no login to key on: keep each verdict
+                // rather than dedup. Two verdicts from one null author both
+                // survive, but effective_review_state short-circuits on
+                // CHANGES_REQUESTED, so a stale CR can only veto (escalate),
+                // never clear, a later APPROVED — the fail-open direction.
                 None => kept.push(r),
             },
             _ => {} // DISMISSED / unknown.
@@ -5282,6 +5291,25 @@ mod tests {
         // a1 is APPROVED but PENDING-shaped (null submittedAt) here, so it too
         // drops — nothing survives.
         assert!(ingested_ids(&nodes).is_empty());
+    }
+
+    #[test]
+    fn ingestable_tiebreak_is_deterministic_on_equal_timestamps() {
+        // Two verdicts from one reviewer at the SAME submittedAt: the rank's
+        // id tiebreak must pick the lexicographically-larger id regardless of
+        // input order, or HashMap::into_values iteration order would leak into
+        // the result (the determinism the doc claims). Both orders → ["r2"].
+        let ts = "2026-01-01T00:00:00Z";
+        let fwd = [
+            review("r1", "APPROVED", Some(ts), Some("amy")),
+            review("r2", "APPROVED", Some(ts), Some("amy")),
+        ];
+        let rev = [
+            review("r2", "APPROVED", Some(ts), Some("amy")),
+            review("r1", "APPROVED", Some(ts), Some("amy")),
+        ];
+        assert_eq!(ingested_ids(&fwd), vec!["r2"]);
+        assert_eq!(ingested_ids(&rev), vec!["r2"]);
     }
 
     #[test]
