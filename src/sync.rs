@@ -51,9 +51,9 @@
 //!     kind='review') sweep under the same rule against the ingested review
 //!     set (ingestable_reviews: the latest opinionated verdict per reviewer
 //!     plus every COMMENTED review). A row leaving that set was superseded by
-//!     its reviewer's newer verdict, dismissed, or deleted upstream, and
-//!     deleted_at uniformly means "left the observed set" — one sweep rule,
-//!     not two.
+//!     its reviewer's newer verdict, dismissed, in an unknown state, or
+//!     deleted upstream, and deleted_at uniformly means "left the observed
+//!     set" — one sweep rule, not two.
 //!
 //!   * Upserts: ON CONFLICT(repo, number) for prs (node ids are data, not
 //!     identity), ON CONFLICT(id) elsewhere; never INSERT OR REPLACE (rowid
